@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your Order</h1>
+    <form>
+        <div>
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="customername" required/>
+        </div>
+        
+        <div>
+            <br>
+            <label for ="email">Email :</label>
+            <input type="text" id="email" name="email" required/>
+        </div>
+        
+        <div>
+            <br>
+            <label for="laptop">Select a Product:</label><br>
+            <input type="radio" id ="laptop" name="laptop1">MacBook Pro 13.3" <br>
+            <input type="radio" id ="laptop" name="laptop2">MacBook Pro 15.4" <br>
+            <input type="radio" id ="laptop" name="laptop3">Macbook Air 13.3" <br>
+            <input type="radio" id ="laptop" name="laptop4">MacBook 12"<br>
+        </div>
+
+        <div>
+            <br>
+            <label for="DoD">Date of Delivery:</label>
+            <input type="date" id="DOD" name="DOD" required>
+        </div>
+
+        <div>
+            <br>
+            <label for="PM">Payment Method:</label>
+            <select name="PM" id ="PM" required>
+                <option>Credit Card</option>
+                <option>Paylah</option>
+                <option>Paynow</option>
+                <option>Cash on Delivery</option>
+            </select>
+        </div>
+
+        <div>
+            <br>
+            <input type ="checkbox" required> I agree to the Terms and Conditions
+        </div>
+
+        <div>
+            <input type ="checkbox"> I agree to receive promotional emails
+        </div>
+
+        <div>
+            <br>
+            <input type="submit" value="Click to Proceed">
+            <input type="reset">
+        </div>
+        
+    </form>
+</body>
+</html>
