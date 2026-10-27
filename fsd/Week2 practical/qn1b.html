@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hoverbox:hover{
+            background-color: lightslategray;
+        }
+
+        .hidden{
+            visibility: hidden;
+            background-color: goldenrod;
+        }
+
+        .hoverbox:hover .hidden{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <p class="hoverbox">Idealism increases in direct proportion to one's distance from the problem
+        <span class="hidden">-- John Galsworthy</span>
+    </p><br>
+    
+    <p>(without CSS)</p><br>
+    <p>Idealism increases in direct proportion to one's distance from the problem</p>
+</body>
+</html>
