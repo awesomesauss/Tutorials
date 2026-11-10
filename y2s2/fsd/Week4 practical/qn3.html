@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+        }
+
+        .row_break {
+            flex-basis: 100%;
+            width: 0;
+        }
+
+        .box {
+            border: 1px solid;
+            width: 200px;
+            height: 50px;
+        }
+
+        p {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p id="output"></p>
+    </div>
+    <div id="content">
+        <input type="button" value="1" class="btn" id="1" onclick="Button(1)">
+        <input type="button" value="2" class="btn" id="2" onclick="Button(2)">
+        <input type="button" value="3" class="btn" id="3" onclick="Button(3)">
+        <input type="button" value="+" class="btn" id="plus" onclick="ButtonPlus()">
+        <div class="row_break"></div>
+        <input type="button" value="4" class="btn" id="4" onclick="Button(4)">
+        <input type="button" value="5" class="btn" id="5" onclick="Button(5)">
+        <input type="button" value="6" class="btn" id="6" onclick="Button(6)">
+        <input type="button" value="-" class="btn" id="minus" onclick="ButtonMinus()">
+        <div class="row_break"></div>
+        <input type="button" value="7" class="btn" id="7" onclick="Button(7)">
+        <input type="button" value="8" class="btn" id="8" onclick="Button(8)">
+        <input type="button" value="9" class="btn" id="9" onclick="Button(9)">
+        <input type="button" value="=" class="btn" id="eq" onclick="ButtonEq()">
+        <div class="row_break"></div>
+        <input type="button" value="0" class="btn" id="0" onclick="Button(0)">
+        <input type="button" value="C" class="btn" id="clear" onclick="ButtonC()">
+        <script>
+            let sum = "";
+
+            function Button(num) {
+                sum = sum + num;
+                document.getElementById("output").innerHTML = sum;
+            }
+
+            function ButtonPlus() {
+                sum = sum + "+";
+                document.getElementById("output").innerHTML = sum;
+            }
+
+            function ButtonMinus() {
+                sum = sum + "-";
+                document.getElementById("output").innerHTML = sum;
+            }
+
+            function ButtonEq() {
+                sum = eval(sum);
+                document.getElementById("output").innerHTML = sum;
+                sum = String(sum);
+            }
+
+            function ButtonC() {
+                sum = "";
+                document.getElementById("output").innerHTML = "";
+            }
+        </script>
+    </div>
+</body>
+</html>

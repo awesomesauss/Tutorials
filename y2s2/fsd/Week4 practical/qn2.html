@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="StartCounter()">
+    <h1>Counter: <span id="counter">0</span></h1>
+    <input type="button" id="stopBtn" value="Stop" onclick="StopCounter()" disabled>
+    <script>
+        let count = 0
+        let timerid = null  
+
+        function StartCounter(){
+            timerid = setInterval(function(){
+            count = count + 1;
+            document.getElementById('counter').textContent = count;
+            }, 1000);
+        }
+
+        setTimeout(function(){
+            document.getElementById("stopBtn").disabled = false;
+        }, 15000)
+
+        function StopCounter(){
+            if (count<15){
+                return;
+            }
+            clearInterval(timerid);
+            timerid=null;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop</title>
+    <style>
+        .dropBox {
+            border: 1px solid;
+            height: 50px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="dropBox" ondrop="handleDrop(event)"
+     ondragover="handleDragOver(event)">
+    </div><br><br>
+    <p id="dragText" draggable="true" 
+       ondragstart="handleStartDrag(event)">Hello World</p>
+    
+    <p id="dragText1" draggable="true"
+        ondragstart="handleStartDrag(event)">Sean Tan</p>
+    
+    <script>
+        function handleDrop(e){
+            e.preventDefault();
+            let id = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(id));
+        }
+
+        function handleDragOver(e){
+            e.preventDefault();
+        }
+
+        function handleStartDrag(e){
+              e.dataTransfer.setData("text",e.target.id);
+        }
+    </script>
+</body>
