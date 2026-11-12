@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Apple Macbook Pro</h1>
+        <div style="padding-bottom: 10px;">System configuration and Price</div>
+    <form>
+        <div>
+            <label for="disabled">Screen Size:</label><br>
+            <input type="radio" id="disabled" disabled>13.3"</button>
+        </div>
+
+        <div>
+            <label for="cpuc">CPU:</label><br>
+            <input type="radio" id="cpuc" name="cpuc" checked> Intel i5 2.3GHz <br>
+            <input type="radio" id="cpuc2" name="cpuc"> Intel i5 2.7GHz (+$150)
+        </div>
+        
+        <div>
+            <label for="ramc">RAM:</label><br>
+            <input type="radio" id="ramc" name="ramc" checked> 8GB <br>
+            <input type="radio" id="ramc2" name="ramc"> 16GB (+$150)
+        </div>
+        
+        <div>
+            <label for = "disabledstorage">Storage:</label><br>
+            <input type="radio" id="disabledstorage" disabled>125GB SSD
+        </div>
+
+        <div><br>
+            Price: $<span id = "price">1340</span>
+        </div>
+        
+        <div><br>
+            <input type="checkbox" id="tnc" name="tnc">I agree to the terms and conditions
+        </div>
+
+        <div>
+            <br>
+            <input type="submit" id="cps" value="Check price">
+            <input type="submit" id="buy" value="Buy, yes buy">
+        </div>
+        
+        <div><br>
+            <span id="msgc"></span>
+        </div>
+    </form>
+    <style>
+        #title{
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        function checkprice(){
+            const submit = document.getElementById('cps')
+            submit.addEventListener('click', function(event){
+                event.preventDefault()
+                let totalPrice = 1340;
+                const add1 = document.getElementById('cpuc2');
+                const add2 = document.getElementById('ramc2');
+                
+                if (add1.checked){
+                    totalPrice+=150;
+                }
+                if (add2.checked){
+                    totalPrice+=150
+                }
+
+                document.getElementById('price').textContent= totalPrice;
+
+        });
+    }
+
+    function bought(){
+        const buybutton = document.getElementById('buy')
+        buybutton.addEventListener('click',function(buy){
+            event.preventDefault(buy)
+            const tnc = document.getElementById('tnc')
+            const msg = document.getElementById('msgc')
+            if (tnc.checked ===true){
+                msg.textContent = "Thank you for your purchase!"
+                msg.style.color = 'blue'
+            } else{
+                msg.textContent = "Please agree to our t&c!"
+                msg.style.color = 'red'
+            }
+
+        }
+    )}
+    
+    checkprice();
+    bought();
+    </script>
+</body>
+</html>
