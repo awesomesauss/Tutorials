@@ -4,26 +4,44 @@
     <style>
         .dropBox {
             border: 1px solid;
-            height: 50px;
+            height: 15ch;
             width: 150px;
+        }
+        p{
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-<div class="dropBox" ondrop="handleDrop(event)"
+    <h1>What are the languages we use in Full Stack Development?</h1>
+<ol class="dropBox" ondrop="handleDrop(event)"
      ondragover="handleDragOver(event)">
-    </div><br><br>
+</ol><br><br>
+    <h1>Drag and drop into the box</h1><br>
     <p id="dragText" draggable="true" 
-       ondragstart="handleStartDrag(event)">Hello World</p>
+       ondragstart="handleStartDrag(event)">C++</p>
     
     <p id="dragText1" draggable="true"
-        ondragstart="handleStartDrag(event)">Sean Tan</p>
+        ondragstart="handleStartDrag(event)">Java</p>
+    
+    <p id="dragText2" draggable="true" 
+       ondragstart="handleStartDrag(event)">JavaScript</p>
+    
+    <p id="dragText3" draggable="true"
+        ondragstart="handleStartDrag(event)">HTML</p>
+
+    <p id="dragText4" draggable="true"
+        ondragstart="handleStartDrag(event)">CSS</p>
     
     <script>
         function handleDrop(e){
-            e.preventDefault();
-            let id = e.dataTransfer.getData("text");
-            e.target.appendChild(document.getElementById(id));
+           const data = e.dataTransfer.getData("text");
+           const element = document.getElementById(data);
+           let text = element.innerText;
+        let li = document.createElement('li');
+            li.innerText = text;
+        e.target.closest("ol").appendChild(li);
+        element.remove();
         }
 
         function handleDragOver(e){

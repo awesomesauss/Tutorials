@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 
 class JapElective extends StatefulWidget {
-
-  JapElective({super.key}) }) {
-  print("constructor");
+  JapElective({super.key}) {
+    print("constructor");
   }
 
   @override
-  State<JapElective> createState(){
+  State<JapElective> createState() {
     print("createState");
-    return (_JapElectiveState());
+    return _JapElectiveState();
   }
 }
 
 class _JapElectiveState extends State<JapElective> {
-  var count = 0;
+  int count = 0;
 
   void func1() {
     count = count + 1;
     print('count = $count');
-    setState(() {
-      
-    });
+
+    setState(() {});
   }
 
   @override
@@ -32,7 +30,9 @@ class _JapElectiveState extends State<JapElective> {
         title: const Text(
           'Japanese Elective Class',
           textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
       body: Row(
@@ -41,11 +41,16 @@ class _JapElectiveState extends State<JapElective> {
           Text(
             'Class size - $count',
             textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 30, 
-            color: count > 10 ? Colors.red : Colors.green),
+            style: TextStyle(
+              fontSize: 30,
+              color: count > 10 ? Colors.red : Colors.green,
+            ),
           ),
           const SizedBox(width: 100),
-          FilledButton(onPressed: func1, child: const Text('+')),
+          FilledButton(
+            onPressed: func1,
+            child: const Text('+'),
+          ),
         ],
       ),
     );

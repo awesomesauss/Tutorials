@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class JapElective extends StatefulWidget {
 
-  JapElective({super.key});
+  const JapElective({super.key});
 
   @override
   State<JapElective> createState() => _JapElectiveState();
