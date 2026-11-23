@@ -16,14 +16,12 @@ const countries = [
 ];
 
 // create your function DisplayData here
-function DisplayData(x){
-    for(i=0; i < x.length; i++){
-        const item = x[i];
-        console.log(`country : ${item.country}`);
-        console.log(`population : ${item.population}`)
-        console.log(`landArea : ${item.landArea}`);
-        console.log(`density : ${item.density}`)
-        console.log(`urbanPopulation : ${item.urbanPopulation}`);
+function DisplayData(countries){
+    for (let i = 0; i < countries.length; i++){
+        let country = countries[i];
+        for(let k in country){
+            console.log(k + " : " + country[k])
+        }
     }
 }
 
