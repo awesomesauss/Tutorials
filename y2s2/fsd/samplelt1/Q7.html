@@ -11,6 +11,12 @@
     Name: <input type="text" id="input""><br>
     <input type="button" value="ADD" onclick="add()"><br>
     <script>
+        function add(){
+            let task = document.getElementById("input").value;
+            let item = document.createElement("li");
+            item.innerHTML = task;
+            document.getElementById("output").appendChild(item)
+        }
         // your function here
     </script>
 </body>
