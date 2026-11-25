@@ -16,14 +16,6 @@ const countries = [
 ];
 
 // create your function DisplayData here
-function DisplayData(countries){
-    for (let i = 0; i < countries.length; i++){
-        let country = countries[i];
-        for(let k in country){
-            console.log(k + " : " + country[k])
-        }
-    }
-}
 
 console.log("Countries population & statistic: ");
 DisplayData(countries);
