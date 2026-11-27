@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Q1</title>
+        <style>
+            /* add your CSS. Do not modify the HTML */
+            ul ol>li{
+                font-weight:bold;
+                font-style:italic;
+            }
+            ul ol ul ul>li:nth-child(odd){
+                color:red;
+                
+            }
+            ul ol ul ul{
+                font-size:1.5em;
+            }
+            ul ol ul ul li:hover{
+                background-image: url("imgs/bg.jpg");
+                list-style-type: "\2192";
+            }
+            ul ol ul ul li:hover::marker{
+                color:red
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>USA</li>
+            <ol>
+                <li>Los Angeles</li>
+                <ul>
+                    <li>Living costs</li>
+                    <ul>
+                        <li>Meal: $20</li>
+                        <li>Utility cost: $141</li>
+                        <li>1-Room Apartment: $2568</li>
+                        <li>Salary: $5441</li>
+                    </ul>
+                </ul>
+                <li>Oklahoma</li>
+                <ul>
+                    <li>Living costs</li>
+                    <ul>
+                        <li>Meal: $10</li>
+                        <li>Utility cost: $220</li>
+                        <li>1-Room Apartment: $1281</li>
+                        <li>Salary: $3443</li>
+                    </ul>
+                </ul>
+            </ol>
+        </ul>
+    </body>
+</html>

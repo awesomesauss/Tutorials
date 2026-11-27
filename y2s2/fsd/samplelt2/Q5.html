@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Q7</title>
+    </head>
+
+    <body>
+        <h1>Question: HTML stands for:</h1>
+        <div id="choice">
+            <input type="radio" name="answer" value="A" checked />Home
+            Technology Make-up Library<br />
+            <input type="radio" name="answer" value="B" />Hope Tomorrow Maybe
+            Luckier<br />
+            <input type="radio" name="answer" value="C" />HyperText Markup
+            Language<br />
+            <input type="radio" name="answer" value="D" />HyperText Markup
+            Library<br />
+        </div>
+        <input type="button" onclick="checkAnswer()" value="Answer" /><br />
+        <p id="comment"></p>
+        <script>
+            // Add your JavaScript here
+            function checkAnswer(){
+                let row = document.querySelector('input[name=answer]:checked');
+                const comment = document.getElementById("comment");
+                if(row.value === "A" || row.value ==="B"){
+                    comment.textContent="Incorrect, please review your lecture notes again!";
+                    comment.style.color= "red";
+                } else if (row.value ==="C"){
+                    comment.textContent="Close, but that is incorrect. Try again!"
+                    comment.style.color="blue";
+                } else{
+                    comment.textContent="You're correct! Good job!"
+                    comment.style.color = "green";
+                }
+            }
+        </script>
+    </body>
+</html>
